@@ -1,8 +1,9 @@
 var table = `<table>
 <tr>
-    <td>Product Id</td>
-    <td>Product Name</td>
-    <td>Product Price</td>
+    <td>Id</td>
+    <td>Name</td>
+    <td>Total Salary</td>
+    <td>Action</td>
 </tr>`;
 var tfooter = "</table>";
 var person = [];
@@ -28,6 +29,7 @@ row += `  <tr>
     <td>${element.Id}</td>
     <td>${element.Name}</td>
     <td>${element.Sal}</td>
+    <td class="action">Delete</td>
 </tr>`;
 });
 document.getElementById("table").innerHTML = table +row+ tfooter;
