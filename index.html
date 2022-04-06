@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JavaScript Advanced</title>
+    <style>
+      /* .col-1,.col-2{
+              float: left;
+          } */
+
+      .int__box {
+        height: 35px;
+        display: flex;
+        padding: 5px;
+        /* border: 1px solid green; */
+      }
+
+      .col-1 {
+        width: 20%;
+        text-align: left;
+      }
+      .container {
+        padding: 4%;
+      }
+      .btn {
+        margin-top: 30px;
+        width: 250px;
+        padding: 20px;
+        border: 2px solid black;
+        text-align: center;
+        font-size: 16px;
+        cursor: pointer;
+      }
+      input {
+        width: 35%;
+      }
+      #table {
+        margin-top: 8%;
+      }
+      table {
+        width: 100%;
+      }
+      td {
+        width: 30%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main">
+      <div class="container">
+        <div class="form">
+          <div class="int__box">
+            <label class="col-1" for="id">ID:</label>
+            <input class="col-2" type="number" id="id" /><br />
+          </div>
+          <div class="int__box">
+            <label class="col-1" for="Name">Name:</label>
+            <input class="col-2" type="text" id="Name" /><br />
+          </div>
+          <div class="int__box">
+            <label class="col-1" for="sal">Basic Sal:</label>
+            <input class="col-2" type="number" id="sal" /><br />
+          </div>
+
+          <button class="btn" type="submit" onclick="addproduct()">
+            ADD PRODUCT
+          </button>
+        </div>
+
+        <div id="table"></div>
+      </div>
+    </div>
+
+   <script src="app.js"></script>
+  </body>
+</html>
