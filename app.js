@@ -19,8 +19,10 @@ class employe{
         Name: `${name}`,
         Sal: `${sal}`,
         };
-        person.push(data);
+        person.push(data); 
         console.log(person);
+        const myJSON = JSON.stringify(person);
+        console.log(myJSON)
         
     }
     display(){
@@ -41,6 +43,8 @@ class employe{
     }
 }
 let e1 = new employe();
+console.log(e1)
+
 function addperson(){
 e1.personfun();
 e1.display();
