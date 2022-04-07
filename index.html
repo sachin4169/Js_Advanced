@@ -49,6 +49,9 @@
       .action{
           text-decoration: underline;
       }
+      #error{
+        color: red;
+      }
     </style>
   </head>
   <body>
@@ -67,6 +70,7 @@
             <label class="col-1" for="sal">Basic Sal:</label>
             <input class="col-2" type="number" id="sal" /><br />
           </div>
+          <p id="error"></p>
 
           <button class="btn" id="btn" type="submit">
             ADD

@@ -24,6 +24,10 @@ class employe{
         var name = document.getElementById("Name").value;
         var sal = document.getElementById("sal").value;
 
+        if(id == "" || name == "" || sal == ""){
+            document.getElementById("error").innerHTML = "All fields Must be filled"
+        }
+
         var data = {
         Id: `${id}`,
         Name: `${name}`,
