@@ -1,3 +1,5 @@
+import {id, name, salary} from "./details.js";
+
 var table = `<table>
 <tr>
     <td>Id</td>
@@ -6,6 +8,14 @@ var table = `<table>
     <td>Updated Salary</td>
 </tr>`;
 var tfooter = "</table>";
+var row ="";
+row += `<tr>
+<td>${id}</td>
+<td>${name}</td>
+<td>${salary}</td>
+<td></td>
+</tr>`;
+document.getElementById("table").innerHTML = table +row+ tfooter;
 var person = [];
 class employe{
 
@@ -28,10 +38,10 @@ class employe{
     display(){
       
         try {
-            var row =""
+            
             person.forEach((element) => {
             var val =element.Sal*1.10
-            row += `  <tr>
+            row += `<tr>
             <td>${element.Id}</td>
             <td>${element.Name}</td>
             <td>${element.Sal}</td>
@@ -49,11 +59,12 @@ class employe{
        
     }
 }
-
-
-function addperson(){
+document.getElementById("btn").addEventListener("click" ,() =>{
     let e1 = new employe();
-    console.log(e1)
-    e1.personfun();
-    e1.display();
-}
+        console.log(e1)
+        e1.personfun();
+        e1.display();
+});
+// function addperson(){
+    
+// }
