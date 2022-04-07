@@ -33,24 +33,28 @@ class employe{
         console.log(person);
         // JSON.stringify(person);
         // console.log(myJSON)
-        
+        this.display();
     }
     display(){
-      
+      row =""
         try {
-            
             person.forEach((element) => {
-            var val =element.Sal*1.10
-            row += `<tr>
-            <td>${element.Id}</td>
-            <td>${element.Name}</td>
-            <td>${element.Sal}</td>
-            <td>${val}</td>
-            </tr>`;
+                if(element.Sal>0){
+                    var val =element.Sal*1.10
+                    row += `<tr>
+                    <td>${element.Id}</td>
+                    <td>${element.Name}</td>
+                    <td>${element.Sal}</td>
+                    <td>${val}</td>
+                    </tr>`;
+                }
+                else{
+                   console.log("your salary is less than 0 . It "+element.Sal); 
+                }
             });
             document.getElementById("table").innerHTML = table +row+ tfooter;
-
-            document.getElementById("id").value = "";
+            var x = document.getElementById("id").value = "";
+            console
             document.getElementById("Name").value = "";
             document.getElementById("sal").value = "";
         } catch (error) {
@@ -63,7 +67,6 @@ document.getElementById("btn").addEventListener("click" ,() =>{
     let e1 = new employe();
         console.log(e1)
         e1.personfun();
-        e1.display();
 });
 // function addperson(){
     
