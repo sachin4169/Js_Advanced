@@ -3,63 +3,57 @@ var table = `<table>
     <td>Id</td>
     <td>Name</td>
     <td>Total Salary</td>
-    <td>Action</td>
+    <td>Updated Salary</td>
 </tr>`;
 var tfooter = "</table>";
 var person = [];
 class employe{
 
-    constructor(id,name,salary){
-        this.id =id;
-        this.name = name;
-        this.salary = salary;
-    }
+    personfun() {
+        var id = document.getElementById("id").value;
+        var name = document.getElementById("Name").value;
+        var sal = document.getElementById("sal").value;
 
-    // personfun() {
-    //     var id = document.getElementById("id").value;
-    //     var name = document.getElementById("Name").value;
-    //     var sal = document.getElementById("sal").value;
-
-    //     var data = {
-    //     Id: `${id}`,
-    //     Name: `${name}`,
-    //     Sal: `${sal}`,
-    //     };
-    //     person.push(data); 
-    //     console.log(person);
-    //     JSON.stringify(person);
-    //     // console.log(myJSON)
+        var data = {
+        Id: `${id}`,
+        Name: `${name}`,
+        Sal: `${sal}`,
+        };
+        person.push(data); 
+        console.log(person);
+        // JSON.stringify(person);
+        // console.log(myJSON)
         
-    // }
+    }
     display(){
-        // var data = JSON.parse(person)
-        // console.log(typeof(data))
-        // console.log(data)
-        // console.log(typeof(person));
-        var row =""
-        // person.forEach((element) => {
-        row += `  <tr>
-        <td>${this.id}</td>
-        <td>${this.name}</td>
-        <td>${this.salary}</td>
-        <td class="action">Delete</td>
-        </tr>`;
-        // });
-        document.getElementById("table").innerHTML = table +row+ tfooter;
+      
+        try {
+            var row =""
+            person.forEach((element) => {
+            var val =element.Sal*1.10
+            row += `  <tr>
+            <td>${element.Id}</td>
+            <td>${element.Name}</td>
+            <td>${element.Sal}</td>
+            <td>${val}</td>
+            </tr>`;
+            });
+            document.getElementById("table").innerHTML = table +row+ tfooter;
 
-        document.getElementById("id").value = "";
-        document.getElementById("Name").value = "";
-        document.getElementById("sal").value = "";
+            document.getElementById("id").value = "";
+            document.getElementById("Name").value = "";
+            document.getElementById("sal").value = "";
+        } catch (error) {
+            console.log(error);
+        }
+       
     }
 }
 
 
 function addperson(){
-    var id = document.getElementById("id").value;
-    var name = document.getElementById("Name").value;
-    var sal = document.getElementById("sal").value;
-    // e1.personfun();
-    let e1 = new employe(id,name, sal);
+    let e1 = new employe();
     console.log(e1)
+    e1.personfun();
     e1.display();
 }
