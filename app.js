@@ -1,4 +1,6 @@
+"use strict";
 import {id, name, salary} from "./details.js";
+
 
 var table = `<table>
 <tr>
@@ -26,9 +28,8 @@ class employe{
 
         if(id == "" || name == "" || sal == ""){
             document.getElementById("error").innerHTML = "All fields Must be filled"
-        }
-
-        var data = {
+        }else{
+              var data = {
         Id: `${id}`,
         Name: `${name}`,
         Sal: `${sal}`,
@@ -37,7 +38,11 @@ class employe{
         console.log(person);
         // JSON.stringify(person);
         // console.log(myJSON)
+        person.forEach(e => {
+            e.Sal = 30000;
+        });
         this.display();
+        }
     }
     display(){
       row =""
